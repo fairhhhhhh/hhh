@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        div {
+            position: relative;
+            width: 107px;
+            height: 107px;
+            margin: 200px auto;
+        }
+        
+        span {
+            position: absolute;
+            width: 107px;
+            height: 107px;
+            background: url(img/a_1.png);
+            transition: all 0.8s ease 0s;
+        }
+        
+        div:hover span {
+            transform: rotateZ(360deg);
+        }
+        
+        p {
+            position: absolute;
+            width: 107px;
+            height: 107px;
+            text-align: center;
+            line-height: 107px;
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>托马斯旋转</p>
+        <span></span>
+    </div>
+</body>
+
+</html>

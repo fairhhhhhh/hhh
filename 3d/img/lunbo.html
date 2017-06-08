@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            perspective: 2000px;
+        }
+        
+        .luobo {
+            transform-style: preserve-3d;
+            transform-origin: 300px 300px;
+            width: 600px;
+            height: 600px;
+            margin: 0 auto;
+            position: relative;
+            animation: ss 5s linear infinite;
+        }
+        
+        @keyframes ss {
+            0% {
+                transform: rotateY(0deg);
+            }
+            11% {
+                transform: rotateY(40deg);
+            }
+            22% {
+                transform: rotateY(80deg);
+            }
+            33% {
+                transform: rotateY(120deg);
+            }
+            44% {
+                transform: rotateY(160deg);
+            }
+            55% {
+                transform: rotateY(200deg);
+            }
+            66% {
+                transform: rotateY(240deg);
+            }
+            77% {
+                transform: rotateY(280deg);
+            }
+            88% {
+                transform: rotateY(320deg);
+            }
+            100% {
+                transform: rotateY(360deg);
+            }
+        }
+        
+        img {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            bottom: 150px;
+            left: 240px;
+        }
+        
+        img:nth-child(1) {
+            transform: rotateY(0deg) translateZ(200px);
+        }
+        
+        img:nth-child(2) {
+            transform: rotateY(40deg) translateZ(200px);
+        }
+        
+        img:nth-child(3) {
+            transform: rotateY(80deg) translateZ(200px);
+        }
+        
+        img:nth-child(4) {
+            transform: rotateY(120deg) translateZ(200px);
+        }
+        
+        img:nth-child(5) {
+            transform: rotateY(160deg) translateZ(200px);
+        }
+        
+        img:nth-child(6) {
+            transform: rotateY(200deg) translateZ(200px);
+        }
+        
+        img:nth-child(7) {
+            transform: rotateY(240deg) translateZ(200px);
+        }
+        
+        img:nth-child(8) {
+            transform: rotateY(280deg) translateZ(200px);
+        }
+        
+        img:nth-child(9) {
+            transform: rotateY(320deg) translateZ(200px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="luobo">
+        <img src="11.png" alt="">
+        <img src="12.png" alt="">
+        <img src="13.png" alt="">
+        <img src="14.png" alt="">
+        <img src="15.png" alt="">
+        <img src="16.png" alt="">
+        <img src="17.png" alt="">
+        <img src="18.png" alt="">
+        <img src="19.png" alt="">
+    </div>
+</body>
+<script>
+    var r = 50 / Math.tan(20 / 180 * Math.PI);
+    console.log(r);
+
+
+    var luobo = document.getElementsByClassName("luobo")[0];
+    var nowRotateX = 0;
+    var nowRotateY = 0;
+    luobo.onmousedown = function(ev) {
+        startX = ev.clientX;
+        startY = ev.clientY;
+
+        luobo.onmousemove = function(ev) {
+            var deltaX = ev.clientX - startX;
+            var deltaY = ev.clientY - startY;
+
+            nowRotateX += -deltaY / 100;
+            nowRotateY += deltaX / 100;
+            // luobo.style.transform = "rotateX(" + deltaX + "deg)";
+            this.style.transform = "rotateX(" + nowRotateY + "deg)";
+            console.log(deltaX);
+        }
+    }
+</script>
+<!--<script src="jquery.js"></script>
+<script>
+    var box = $('.lunbo');
+
+    var nowRotateX = 0;
+    var nowRotateY = 0;
+
+    $(document).mousedown(function(ev) {
+        startX = ev.clientX;
+        startY = ev.clientY;
+
+
+
+        $(document).mousemove(function(ev) {
+            var deltaX = ev.clientX - startX;
+            var deltaY = ev.clientY - startY;
+
+            nowRotateX += -deltaY / 100;
+            nowRotateY += deltaX / 100;
+
+            box.css("transform", "rotateX(" + nowRotateX + "deg) rotateY(" + nowRotateY + "deg)");
+            return false;
+        })
+    })
+
+
+    $(document).mouseup(function() {
+        $(document).off('mousemove');
+        box.css("transition", "all 1s ease 0s");
+    })
+</script>-->
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            perspective: 1000px;
+        }
+        
+        .luobo {
+            transition: all 1s ease 0s;
+            transform-style: preserve-3d;
+            transform-origin: 300px 300px;
+            width: 600px;
+            height: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        img {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            bottom: 150px;
+            left: 240px;
+        }
+        
+        img:nth-child(1) {
+            transform: rotateY(0deg) translateZ(200px);
+        }
+        
+        img:nth-child(2) {
+            transform: rotateY(40deg) translateZ(200px);
+        }
+        
+        img:nth-child(3) {
+            transform: rotateY(80deg) translateZ(200px);
+        }
+        
+        img:nth-child(4) {
+            transform: rotateY(120deg) translateZ(200px);
+        }
+        
+        img:nth-child(5) {
+            transform: rotateY(160deg) translateZ(200px);
+        }
+        
+        img:nth-child(6) {
+            transform: rotateY(200deg) translateZ(200px);
+        }
+        
+        img:nth-child(7) {
+            transform: rotateY(240deg) translateZ(200px);
+        }
+        
+        img:nth-child(8) {
+            transform: rotateY(280deg) translateZ(200px);
+        }
+        
+        img:nth-child(9) {
+            transform: rotateY(320deg) translateZ(200px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="luobo">
+        <img src="img/11.png" alt="">
+        <img src="img/12.png" alt="">
+        <img src="img/13.png" alt="">
+        <img src="img/14.png" alt="">
+        <img src="img/15.png" alt="">
+        <img src="img/16.png" alt="">
+        <img src="img/17.png" alt="">
+        <img src="img/18.png" alt="">
+        <img src="img/19.png" alt="">
+    </div>
+</body>
+<script>
+    var luobo = document.getElementsByClassName("luobo")[0];
+    var aa = 0;
+    luobo.onclick = function() {
+        console.log(this);
+        aa += 40;
+        this.style.transform = "rotateY(" + aa + "deg)";
+    }
+</script>
+
+</html>
