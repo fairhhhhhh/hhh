@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .shuye {
+            width: 90px;
+            height: 65px;
+            position: absolute;
+            background: url(111.png) no-repeat;
+            background-position: 0 -150px;
+            animation: xia 6s linear infinite;
+        }
+        
+        span {
+            display: block;
+            width: 239px;
+            height: 150px;
+            background: url(111.png) no-repeat;
+            background-position: -10 0px;
+            margin-left: 100px;
+            margin-top: 160px;
+        }
+        
+        @keyframes xia {
+            0% {
+                transform: rotateZ(-10deg) translateX(0) translateY(-250px);
+                opacity: 0;
+            }
+            30% {
+                transform: rotateZ(10deg) translateX(150px) translateY(-50px);
+                opacity: 1;
+            }
+            60% {
+                transform: rotateZ(30deg) translateX(300px) translateY(150px);
+                opacity: 0;
+            }
+            100% {
+                transform: rotateZ(30deg) translateX(300px) translateY(150px);
+                opacity: 0;
+            }
+        }
+        
+        .jihe {
+            width: 350px;
+            height: 170px;
+            position: relative;
+            left: 280px;
+            top: -126px;
+        }
+        
+        .jihe span {
+            position: absolute;
+        }
+        /*正方形*/
+        
+        .fang {
+            width: 137px;
+            height: 136px;
+            margin: -42px 0 0 267px;
+            z-index: 1;
+            background: url(111.png) no-repeat 0 -482px;
+            animation: ff 2s ease-in-out 2s infinite;
+        }
+        
+        @keyframes ff {
+            0% {
+                transform: rotateZ(0);
+            }
+            30% {
+                transform: rotateZ(360deg);
+            }
+            100% {
+                transform: rotateZ(360deg);
+            }
+        }
+        /*三角形*/
+        
+        .san {
+            width: 170px;
+            height: 170px;
+            z-index: 3;
+            margin: -50px 0 0 200px;
+            background: url(111.png) no-repeat 0 -311px;
+            animation: ss 2s ease-in-out 1s infinite;
+        }
+        
+        @keyframes ss {
+            0% {
+                transform: rotateZ(0);
+            }
+            30% {
+                transform: rotateZ(360deg);
+            }
+            100% {
+                transform: rotateZ(360deg);
+            }
+        }
+        /*圆形*/
+        
+        .yuang {
+            width: 96px;
+            height: 96px;
+            z-index: 5;
+            margin: 24px 0 0 330px;
+            background: url(111.png) no-repeat 0 -215px;
+            animation: yy 2s ease-in-out infinite;
+        }
+        
+        @keyframes yy {
+            0% {
+                transform: rotateZ(0);
+            }
+            30% {
+                transform: rotateZ(360deg);
+            }
+            100% {
+                transform: rotateZ(360deg);
+            }
+        }
+        
+        .deng {
+            width: 191px;
+            height: 267px;
+            background: url(111.png) no-repeat 0 -620px;
+            margin-left: 870px;
+            margin-top: -405px;
+            position: relative
+        }
+        
+        .guang {
+            width: 341px;
+            height: 256px;
+            background: url(111.png) no-repeat 0 -887px;
+            position: absolute;
+            left: -175px;
+            top: -221px;
+            animation: ll 3s ease-in-out 1s infinite;
+        }
+        
+        @keyframes ll {
+            0% {
+                opacity: 0;
+            }
+            30% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        .fly {
+            width: 300px;
+            height: 300px;
+            position: relative;
+        }
+        
+        .fly1 {
+            width: 225px;
+            height: 220px;
+            background: url(111.png) no-repeat -239px 0;
+            margin-left: 1220px;
+            margin-top: -246px;
+            animation: xiu 0.5s linear infinite alternate;
+        }
+        
+        @keyframes xiu {
+            0% {
+                transform: translateX(0) translateY(0);
+            }
+            100% {
+                transform: translateX(10px) translateY(8px);
+            }
+        }
+        
+        .fly .fff {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            top: -300px;
+            left: 1343px;
+        }
+        
+        .fly2 {
+            width: 156px;
+            height: 153px;
+            position: absolute;
+            top: -63px;
+            background: url(111.png) no-repeat -239px -220px;
+            animation: haha 0.5s linear infinite;
+        }
+        
+        @keyframes haha {
+            0% {
+                opacity: 0;
+                transform: translateY(-300px) translateX(300px);
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(0px) translateX(0px);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(300px) translateX(-300px);
+            }
+        }
+        
+        .fly3 {
+            width: 75px;
+            height: 73px;
+            position: absolute;
+            top: -30px;
+            background: url(page.png) no-repeat -165px -150px;
+            animation: youyou 0.5s linear infinite;
+        }
+        
+        @keyframes youyou {
+            0% {
+                opacity: 0;
+                transform: translateY(-300px) translateX(300px);
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(0px) translateX(0px);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(300px) translateX(-300px);
+            }
+        }
+        
+        .fly4 {
+            width: 156px;
+            height: 153px;
+            position: absolute;
+            top: 178px;
+            background: url(page.png) no-repeat -239px -373px;
+            animation: yaya 0.5s linear infinite;
+        }
+        
+        @keyframes yaya {
+            0% {
+                opacity: 0;
+                transform: translateY(-300px) translateX(300px);
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(0px) translateX(0px);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(300px) translateX(-300px);
+            }
+        }
+        
+        .fly5 {
+            width: 94px;
+            height: 93px;
+            position: absolute;
+            top: 180px;
+            background: url(page.png) no-repeat -395px -220px;
+            animation: hehe 0.5s linear infinite;
+        }
+        
+        @keyframes hehe {
+            0% {
+                opacity: 0;
+                transform: translateY(-300px) translateX(300px);
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(0px) translateX(0px);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(300px) translateX(-300px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="shuye">
+
+    </div>
+    <span></span>
+
+    <div class="jihe">
+        <span class="fang"></span>
+        <span class="san"></span>
+        <span class="yuang"></span>
+    </div>
+
+    <div class="deng">
+        <span class="guang"></span>
+    </div>
+
+    <div class="fly">
+        <div class="fly1"></div>
+        <div class="fff">
+            <div class="fly2"></div>
+            <div class="fly3"></div>
+            <div class="fly4"></div>
+            <div class="fly5"></div>
+        </div>
+
+    </div>
+</body>
+
+</html>
