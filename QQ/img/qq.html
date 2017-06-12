@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>QQ浏览器</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <script src="jquery.js"></script>
+    <script src="velocity.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            transform-style: preserve-3d;
+            overflow-y: hidden;
+            overflow-x: hidden;
+            perspective: 2000px;
+        }
+        
+        #box {
+            width: 880px;
+            left: 50%;
+            margin-left: -440px;
+            position: absolute;
+            z-index: 1000;
+            animation: oooo 1s linear 0s 1;
+        }
+        
+        @keyframes oooo {
+            from {
+                /*transform: translateZ(1300px);*/
+                transform: rotateY(-50deg) translateZ(1300px);
+            }
+            to {
+                /*transform: translateZ(0);*/
+                transform: rotateY(0) translateZ(0);
+            }
+        }
+        
+        .liulan {
+            width: 1000px;
+            position: absolute;
+            left: 50%;
+            top: 100px;
+            margin-left: -500px;
+        }
+        
+        .liulan img:nth-child(1) {
+            float: left;
+            margin-left: 50px;
+        }
+        
+        .liulan img:nth-child(2) {
+            float: right;
+        }
+        
+        .tupian {
+            width: 880px;
+            height: 320px;
+            margin: 220px auto 0;
+        }
+        
+        .tupian img:nth-child(2) {
+            margin-top: -270px;
+        }
+        
+        .bg {
+            height: 100%;
+            animation: oooo1 1s linear 0s 1;
+        }
+        
+        @keyframes oooo1 {
+            0% {
+                transform: rotateZ(0deg) translateZ(0px);
+            }
+            50% {
+                transform: rotateZ(-100deg) translateZ(1200px);
+            }
+            100% {
+                transform: rotateZ(0deg) translateZ(0px);
+            }
+        }
+        
+        .ball {
+            position: absolute;
+        }
+        
+        @keyframes xxxx {
+            from {
+                transform: translateX(0)
+            }
+            to {
+                transform: translateX(-1000px)
+            }
+        }
+        
+        @keyframes xxxx1 {
+            from {
+                transform: translateX(0)
+            }
+            to {
+                transform: translateX(-1000px)
+            }
+        }
+        
+        .ball:nth-child(1) {
+            left: 50%;
+            top: 100px;
+            margin-left: -300px;
+            animation: xxxx1 6s linear infinite;
+        }
+        
+        .ball:nth-child(2) {
+            left: 50%;
+            top: 250px;
+            margin-left: -600px;
+            animation: xxxx1 6s linear infinite;
+        }
+        
+        .ball:nth-child(3) {
+            left: 50%;
+            top: 320px;
+            margin-left: 400px;
+            animation: xxxx 12s linear infinite;
+        }
+        
+        .ball:nth-child(4) {
+            left: 50%;
+            top: 410px;
+            margin-left: 800px;
+            animation: xxxx 12s linear infinite;
+        }
+        
+        .ball:nth-child(1) div {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: #ccc;
+            position: absolute;
+            background: linear-gradient(to bottom, #ffffff, #dedede);
+            animation: ball 6s linear infinite;
+        }
+        
+        .ball:nth-child(2) div {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: #ccc;
+            position: absolute;
+            background: linear-gradient(to bottom, #ffffff, #dedede);
+            animation: ball 6s linear infinite;
+        }
+        
+        .ball:nth-child(3) div {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: #ccc;
+            position: absolute;
+            background: linear-gradient(to bottom, #ffffff, #dedede);
+            animation: ball 6s linear infinite;
+        }
+        
+        .ball:nth-child(4) div {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background: #ccc;
+            position: absolute;
+            background: linear-gradient(to bottom, #ffffff, #dedede);
+            animation: ball 6s linear infinite;
+        }
+        
+        @keyframes ball {
+            0% {
+                transform: rotateZ(0deg);
+            }
+            100% {
+                transform: rotateZ(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div class="tupian">
+            <img src="skin.png" alt="">
+            <img src="skin.gif" alt="">
+        </div>
+        <div class="liulan">
+            <img src="title2_1.png" alt="">
+            <img src="btn.png" alt="">
+        </div>
+    </div>
+    <div class="bg">
+        <div class="ball">
+            <div></div>
+        </div>
+        <div class="ball">
+            <div></div>
+        </div>
+        <div class="ball">
+            <div></div>
+        </div>
+        <div class="ball">
+            <div></div>
+        </div>
+    </div>
+</body>
+<script>
+    // $('.bg').velocity({
+    //     rotateZ: '0deg',
+    //     // translateZ(1300 px)
+    // }, {
+    //     duration: 0
+    // }).velocity({
+    //     rotateZ: '360deg',
+    //     // translateZ(0 px)
+    // }, {
+    //     easing: 'ease-in-out',
+    //     duration: 1000,
+    // })
+</script>
+
+</html>
