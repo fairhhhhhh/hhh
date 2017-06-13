@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="600" height="600"></canvas>
+</body>
+<script>
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext('2d');
+    ctx.fillRect(100, 100, 100, 100); //画一个矩形
+    ctx.strokeRect(300, 100, 100, 100); //边框矩形
+
+    ctx.beginPath();
+    ctx.moveTo(500, 100); //把点移到（500,100）位置上
+    ctx.lineTo(500, 200); //画一条线
+    ctx.lineTo(600, 200); //画一条线
+    ctx.lineTo(600, 100); //画一条线
+    ctx.closePath(); //闭合路径
+    ctx.fillStyle = '#ccc'; //填充色
+    ctx.fill();
+    ctx.strokeStyle = 'red'; //路径色
+    ctx.lineWidth = "10";
+    ctx.stroke(); //把刚刚绘制的所有线添加到笔触，显示出来
+
+    // var canvas = document.getElementById("canvas");
+    // var ctx = canvas.getContext('2d');
+    ctx.fillRect(100, 100, 100, 100);
+    ctx.strokeRect(300, 100, 100, 100);
+
+    ctx.beginPath();
+    ctx.moveTo(500, 100);
+    ctx.lineTo(500, 200);
+    ctx.lineTo(600, 200);
+    ctx.lineTo(600, 100);
+    ctx.closePath();
+    ctx.fillStyle = '#ccc';
+    ctx.fill();
+    ctx.strokeStyle = 'blue';
+    ctx.lineWidth = '10';
+    ctx.stroke();
+
+    // var canvas = document.getElementById('canvas');
+    // var ctx = canvas.getContext('2d');
+    ctx.fillRect(100, 100, 100, 100);
+    ctx.strokeRect(300, 100, 100, 100);
+
+    ctx.beginPath();
+    ctx.moveTo(500, 100);
+    ctx.lineTo(500, 100);
+    ctx.lineTo(500, 200);
+    ctx.lineTo(600, 200);
+    ctx.lineTo(600, 200);
+    ctx.closePath();
+    ctx.fillStyle = '#ccc';
+    ctx.fillStyle();
+    ctx.strokeStyle = "yellow";
+    ctx.lineWidth = "l0";
+    ctx.stroke();
+
+    // var canvas = document.getElementById('canvas');
+    // var ctx = canvas.msGetInputContext('2d');
+    ctx.fillRect(100, 100, 100, 100);
+    ctx.strokeRect(300, 100, 100, 100);
+
+    ctx.beginPath();
+    ctx.moveTo(500, 100);
+    ctx.lineTo(500, 100);
+    ctx.lineTo(500, 200);
+    ctx.lineTo(600, 200);
+    ctx.lineTo(600, 200);
+    ctx.closePath();
+    ctx.fillStyle = '#ccc';
+    ctx.fill();
+    ctx.strokeStyle = 'orange';
+    ctx.lineWidth = "9";
+    ctx.stroke();
+</script>
+
+</html>

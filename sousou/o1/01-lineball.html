@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        canvas {
+            border: 1px solid #000;
+            /*background: #000;*/
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas" width="1000" height="600"></canvas>
+</body>
+<script src="https://cdn.bootcss.com/underscore.js/1.8.3/underscore-min.js"></script>
+<script>
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    var ballArr = []
+    var color = ["#FF6666", "#99FFFF", "#FF3333", "#66CCFF", "#FF6699", "#54FF9F", "#D1EEEE", "#EEAEEE", "#FFFF33"]
+
+    function Getball() {
+        this.r = _.random(10, 30);
+        this.x = _.random(this.r, canvas.width - this.r);
+        this.y = _.random(this.r, canvas.height - this.r);
+        this.dx = _.random(-2, 2);
+        this.dy = _.random(-2, 2);
+        this.color = _.sample(color);
+        this.firend = _.sample(ballArr, _.random(3, 6));
+        ballArr.push(this);
+    }
+    Getball.prototype.render = function() {
+
+        // 绘制小球
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
+        ctx.fillStyle = _.sample(color);
+        ctx.fill();
+        ctx.closePath();
+        // 字体
+        ctx.font = "25px Arial";
+        ctx.textAlign = "center";
+        ctx.fillText("哈哈哈", this.x, this.y);
+        // 绘制线
+        ctx.beginPath();
+        ctx.lineWidth = "0.2";
+        ctx.strokeStyle = _.sample(color);
+        var self = this
+        _.each(this.firend, function(i) {
+            ctx.moveTo(self.x, self.y);
+            ctx.lineTo(i.x, i.y);
+            ctx.closePath();
+            ctx.stroke();
+        })
+
+    }
+    Getball.prototype.updata = function() {
+        if (this.x < this.r || this.x > canvas.width - this.r) {
+            this.dx = -this.dx
+        } else if (this.y < this.r || this.y > canvas.height - this.r) {
+            this.dy = -this.dy
+        }
+        this.x += this.dx;
+        this.y += this.dy;
+    }
+    for (var i = 0; i < 10; i++) {
+        new Getball();
+    }
+    setInterval(function() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
+        _.each(ballArr, function(i) {
+            i.render();
+            i.updata();
+        })
+    }, 10)
+</script>
+
+</html>
