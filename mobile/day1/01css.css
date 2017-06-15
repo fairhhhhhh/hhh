@@ -1,0 +1,277 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font: 400 14px/1.5 Tahoma, "Lucida Grande", Verdana, "Microsoft Yahei", STXihei, hei;
+    overflow-x: hidden;
+    margin: 0 auto;
+    background: #f2f2f2;
+}
+
+html {
+    font-size: 12px
+}
+
+@media only screen and (min-width: 400px) {
+    html {
+        font-size: 14px!important
+    }
+}
+
+@media only screen and (min-width: 414px) {
+    html {
+        font-size: 14px!important
+    }
+}
+
+@media only screen and (min-width: 480px) {
+    html {
+        font-size: 16px!important
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+a,
+body {
+    color: #000;
+}
+
+li {
+    list-style: none;
+}
+
+.search,
+body {
+    min-width: 320px;
+    max-width: 540px;
+}
+
+
+/*header*/
+
+.search {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    z-index: 12;
+    width: 100%;
+    height: 3.21rem;
+    padding: 7px 3.57em 7px 8px;
+    background-color: #F6F6F6;
+    border-bottom: 1px solid #CCC;
+    border-top: 1px solid #CCC;
+    transform: translateX(-50%);
+    box-sizing: border-box;
+}
+
+.search div {
+    height: 2rem;
+    overflow: hidden;
+    padding: 0 5px;
+    line-height: 2rem;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #666;
+    font-size: .86em;
+    border: 1px solid #999;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+}
+
+.search .notice-myctrip {
+    width: 44px;
+    height: 3rem;
+    position: absolute;
+    top: 0;
+    right: 4px;
+}
+
+.search .notice-myctrip span {
+    position: absolute;
+    bottom: 1px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: .86em;
+    color: #2EAAE0;
+    white-space: nowrap;
+}
+
+.header .search div span:after {
+    position: absolute;
+    top: -2px;
+    left: 2px;
+    width: 15px;
+    height: 2em;
+    overflow: hidden;
+    background-position: -59px -276px;
+    content: "";
+}
+
+.search div span {
+    position: relative;
+    padding-left: 20px;
+}
+
+.icon-new,
+.notice-myctrip:before,
+.search div span:after,
+.search div:before,
+.search:before,
+.tool-cn a:before {
+    background: url(img/un_ico_home_v620.png) no-repeat;
+    background-size: 104px 326px;
+}
+
+.search .notice-myctrip:before {
+    content: "\0020";
+    position: absolute;
+    top: 4px;
+    left: 50%;
+    margin-left: -10px;
+    width: 24px;
+    height: 2rem;
+    background-position: -59px -193px;
+}
+
+
+/*banner*/
+
+.banner {
+    width: 100%;
+    min-height: 64px;
+    padding-top: 45px;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%
+}
+
+
+/*content*/
+
+.content {
+    width: 100%;
+    padding: 4px;
+    box-sizing: border-box;
+}
+
+.content .item1 .row {
+    height: 6em;
+    width: 100%;
+    margin-bottom: 4px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.content .item1 .row a {
+    width: 100%;
+    height: 50%;
+    display: block;
+    text-align: center;
+    padding-top: 10px;
+    box-sizing: border-box;
+    color: #fff;
+}
+
+.content .item1 .row:nth-child(1) {
+    background: #ff697a;
+}
+
+.content .item1 .row:nth-child(2) {
+    background: #3d98ff
+}
+
+.content .item1 .row:nth-child(3) {
+    background: #44c522
+}
+
+.content .item1 .row:nth-child(4) {
+    background: #fc9720
+}
+
+.content .item1 .row .row33 {
+    float: left;
+    width: 33.3333%;
+    height: 100%;
+    border-left: 1.3px solid #fff;
+    box-sizing: border-box;
+}
+
+.content .item1 .row .row33 a:nth-child(2) {
+    border-top: 1px solid #fff;
+}
+
+.content .item1 .row .row33:nth-child(1) {
+    border-left: 0;
+}
+
+.content .item1 .row .row33:nth-child(1) a {
+    height: 100%;
+}
+
+.content .item1 .row .row33:nth-child(1) a>i {
+    background: url(img/un_ico_home_v620.png) no-repeat;
+    background-size: 104px auto;
+    display: block;
+    width: 43px;
+    height: 3.6rem;
+    background-position: 0 -124px;
+    margin-left: 35%;
+}
+
+.content .item2 {
+    width: 100%;
+    margin-bottom: 4px;
+}
+
+.content .item2 ul {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    overflow: hidden;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.content .item2 ul:nth-child(1),
+.content .item2 ul:nth-child(3) {
+    border-radius: 5px 5px 0 0
+}
+
+.content .item2 ul li {
+    float: left;
+    flex: 0 0 25%;
+    max-width: 25%;
+    text-align: center;
+    border-right: 1px solid #f2f2f2;
+}
+
+.content .item2 ul li:nth-child(4) {
+    border-right: 0;
+}
+
+.content .item2 ul li a {
+    display: block;
+    width: 100%;
+    height: 60px;
+}
+
+.content .item2 ul li a i {
+    background: url(img/un_ico_subnav_v7.png)no-repeat;
+    background-size: 20px auto;
+    background-position: 0 -80px;
+    width: 20px;
+    height: 1.6rem;
+    display: block;
+    margin: 10px 0 0 40%;
+}
+
+.section .item {
+    width: 100%;
+}
