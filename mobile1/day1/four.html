@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background: blue;
+            margin: 0 auto;
+        }
+        /*注意空格*/
+        
+        @media all and (min-width:500px) and (max-width:1000px) {
+            .box {
+                background: red;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+    </div>
+</body>
+
+</html>
+
+-->
+
+
+    <!--
+
+
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .box {
+            width: 200px;
+            height: 200px;
+            background: blue;
+            margin: 0 auto;
+        }
+        
+        @media all and (min-width:1200px) {
+            .box {
+                background: red;
+                width: 1200px;
+                height: 1200px;
+            }
+        }
+        
+        @media all and (min-width:1024px) and (max-width:1199px) {
+            .box {
+                background: rebeccapurple;
+                width: 1024px;
+                height: 1024px;
+            }
+        }
+        
+        @media all and (min-width:768px) and (max-width:1023px) {
+            .box {
+                background: yellow;
+                width: 768px;
+                height: 768px;
+            }
+        }
+        
+        @media all and (min-width:400px) and (max-width:767px) {
+            .box {
+                background: salmon;
+                width: 400px;
+                height: 400px;
+            }
+        }
+        
+        @media all and (min-width:321px) and (max-width:399px) {
+            .box {
+                background: pink;
+                width: 321px;
+                height: 321px;
+            }
+        }
+        
+        @media all and (min-width:220px) and (max-width:320px) {
+            .box {
+                background: aqua;
+                width: 1024px;
+                height: 500px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+    </div>
+</body>
+
+</html>
+-->
+
+    <!--
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>手机识别横竖屏</title>
+    <style>
+        .box::after {
+            color: Red
+        }
+        
+        @media screen and (orientation:portrait) {
+            .box::after {
+                content: "竖屏"
+            }
+            .box {
+                background: darkcyan;
+                width: 100%;
+                height: 100px;
+            }
+        }
+        
+        @media screen and (orientation:landscape) {
+            .box::after {
+                content: "横屏"
+            }
+            .box {
+                background: salmon;
+                width: 100%;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        你现在访问的是：
+    </div>
+</body>
+
+</html>
+
+
+-->
+
+
+    <!--
+
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html {
+            font-size: 20px;
+        }
+        
+        .box {
+            width: 200px;
+            height: 200px;
+            background: blue;
+            margin: 0 auto;
+        }
+        
+        @media all and (min-width:1200px) {
+            html {
+                font-size: 20px;
+            }
+            .box::after {
+                content: "pc"
+            }
+            .box {
+                background: red;
+                width: 1200px;
+                height: 500px;
+            }
+        }
+        
+        @media all and (min-width:1024px) and (max-width:1199px) {
+            html {
+                font-size: 20px;
+            }
+            .box::after {
+                content: "ipad pro 或者pc"
+            }
+            .box {
+                background: rebeccapurple;
+                width: 1024px;
+                height: 500px;
+            }
+        }
+        
+        @media all and (min-width:768px) and (max-width:1023px) {
+            html {
+                font-size: 19px;
+            }
+            .box::after {
+                content: "ipad"
+            }
+            .box {
+                background: yellow;
+                width: 768px;
+                height: 500px;
+            }
+        }
+        
+        @media all and (min-width:400px) and (max-width:767px) {
+            html {
+                font-size: 18px;
+            }
+            .box::after {
+                content: "iphone 6 plus"
+            }
+            .box {
+                background: salmon;
+                width: 400px;
+                height: 500px;
+            }
+        }
+        
+        @media all and (min-width:321px) and (max-width:399px) {
+            html {
+                font-size: 16.2px;
+            }
+            .box::after {
+                content: "iPhone 6";
+            }
+            .box {
+                background: pink;
+                width: 1024px;
+                height: 500px;
+            }
+        }
+        
+        @media all and (min-width:220px) and (max-width:320px) {
+            html {
+                font-size: 16.2px;
+            }
+            .box::after {
+                content: "iPhone 4 或 iPhone5";
+            }
+            .box {
+                background: aqua;
+                width: 1024px;
+                height: 500px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+    </div>
+</body>
+
+</html>
+-->
+
+
+    <!--
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图片自动等比变化</title>
+    <style>
+        div {
+            float: left;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="../img/1.jpg" alt="">
+    </div>
+    <div>
+        <img src="../img/2.jpg" alt="">
+    </div>
+</body>
+
+</html>
+
+
+-->
+
+
+    <!--
+
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            float: left;
+            width: 50%;
+            border: 1px solid #000;
+            max-width: 500px;
+            background: url(../img/1.jpg) no-repeat;
+            background-size: cover;
+            box-sizing: border-box
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+    </div>
+</body>
+<script>
+    var box = document.querySelectorAll(".box");
+    window.onresize = set;
+    set()
+
+    function set() {
+        var boxWidth = parseInt(getComputedStyle(box[0])['width']);
+        box[0].style.height = boxWidth * (705 / 1140) + "px";
+    }
+</script>
+
+</html>
+-->
+
+
+    <!--
+
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        html {
+            font-size: 20px;
+        }
+        
+        div {
+            float: left;
+            border: 1px solid #000;
+            width: 33.3%;
+            height: 6.66rem;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div>嗯嗯嗯 <img src="" alt=""> </div>
+    <div>嘿嘿嘿 </div>
+    <div>嘻嘻嘻</div>
+</body>
+<script>
+    window.onresize = setFontSize;
+    setFontSize();
+
+    function setFontSize() {
+        var windowWidth = document.documentElement.clientWidth;
+        document.documentElement.style.fontSize = 30 * (windowWidth / 600) + 'px';
+    }
+</script>
+
+</html>
+-->
+    <!--
+
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>拖拽事件</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .box {
+            width: 100px;
+            height: 100px;
+            background: orange;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+<script>
+    var oBox = document.querySelector(".box");
+    var delateX, delateY;
+    var nowX = 0;
+    var nowY = 0;
+    oBox.addEventListener("touchstart", function(ev) {
+        delateX = ev.touches[0].clientX - nowX;
+        delateY = ev.touches[0].clientY - nowY;
+    })
+    oBox.addEventListener("touchmove", function(ev) {
+        nowX = ev.touches[0].clientX - delateX;
+        nowY = ev.touches[0].clientY - delateY;
+        oBox.style.left = nowX + "px"
+        oBox.style.top = nowY + "px"
+    })
+</script>
+
+</html>
+-->
+
+
+</body>
+
+
+
+</html>

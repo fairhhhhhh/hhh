@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /*body {
+            height: 500px;
+            width: 500px;
+            border: 1px solid #ccc;
+            margin: 0 auto;
+        }*/
+        
+        img {
+            position: absolute;
+            width: 200px;
+            height: 100px;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <img src="img/banner1.jpg" alt="">
+
+</body>
+<script>
+    var deltaX, deltaY;
+    var img = document.querySelector('img');
+    var nowX = 0;
+    var nowY = 0;
+    //touchstart  touchstart: //手指放到屏幕上时触发
+    img.addEventListener("touchstart", function(ev) {
+            ev.preventDefault();
+            deltaX = ev.touches[0].clientX - nowX;
+            deltaY = ev.touches[0].clientY - nowY;
+            //touches  表示当前停留在屏幕上的触摸点   touches = clientX的一个属性 表示距离页面可显示的距离
+        })
+        //touchmove   touchmove: //手指在屏幕上滑动式触发
+    img.addEventListener('touchmove', function(ev) {
+        nowX = ev.touches[0].clientX - deltaX;
+        nowY = ev.touches[0].clientY - deltaY;
+
+        img.style.left = nowX + "px";
+        img.style.top = nowY + "px";
+    })
+</script>
+
+</html>

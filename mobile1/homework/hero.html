@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="stylesheet" href="https://g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <link rel="stylesheet" href="https://g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
+    <style type="text/css">
+        .infinite-scroll-preloader {
+            margin-top: -20px;
+        }
+    </style>
+    <script type='text/javascript' src='https://g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='https://g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='https://g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+</head>
+
+<body>
+    <div class="page-group">
+        <div class="page">
+            <header class="bar bar-nav">
+                <h1 class="title">王者之路</h1>
+            </header>
+            <!-- 添加 class infinite-scroll 和 data-distance  向下无限滚动可不加infinite-scroll-bottom类，这里加上是为了和下面的向上无限滚动区分-->
+            <div class="content infinite-scroll infinite-scroll-bottom" data-distance="100">
+                <div class="list-block">
+                    <div class="list-container">
+
+                    </div>
+                </div>
+                <!-- 加载提示符 -->
+                <div class="infinite-scroll-preloader">
+                    <div class="preloader"></div>
+                </div>
+            </div>
+        </div>
+
+</body>
+<script>
+    // 加载flag
+    var loading = false;
+    // 最多可加载的条目
+    var maxItems = 70;
+
+    // 每次加载添加多少条目
+    var itemsPerLoad = 20;
+    var page = 1;
+    var pre_page = 5;
+
+    function addItems(number, lastIndex) {
+        // 生成新条目的HTML
+        var html = '';
+        $.ajax({
+            url: "hero.php",
+            data: {
+                page: page,
+                pre_page: pre_page
+            },
+            dataType: 'json',
+            success: function(data) {
+                var obj = data.hero
+                $.each(obj, function(index, item) {
+                    console.log(item);
+                    html += `<div class="card facebook-card">
+                            <div class="card-header no-border">
+                                <div class="facebook-avatar"><img src="${obj[index].img}" width="34" height="34"></div>
+                                <div class="facebook-name">${obj[index].hero_name}</div>
+                                <div class="facebook-date">${obj[index].hero_title}</div>
+                            </div>
+                            <div class="card-content"><img src="${obj[index].img}" width="100%"></div>
+                            <div class="card-footer no-border">
+                                <a href="#" class="link">赞</a>
+                                <a href="#" class="link">评论</a>
+                                <a href="#" class="link">分享</a>
+                            </div>
+                        </div>`;
+                })
+                $('.infinite-scroll-bottom .list-container').append(html);
+            }
+        });
+        page++;
+
+    }
+    //预先加载20条
+    addItems(itemsPerLoad, 0);
+
+    // 上次加载的序号
+
+    var lastIndex = 20;
+
+    // 注册'infinite'事件处理函数
+    $(document).on('infinite', '.infinite-scroll-bottom', function() {
+
+        // 如果正在加载，则退出
+        if (loading) return;
+
+        // 设置flag
+        loading = true;
+
+
+        // 模拟1s的加载过程
+        setTimeout(function() {
+            // 重置加载flag
+            loading = false;
+
+            if (lastIndex >= maxItems) {
+                // 加载完毕，则注销无限加载事件，以防不必要的加载
+                $.detachInfiniteScroll($('.infinite-scroll'));
+                // 删除加载提示符
+                $('.infinite-scroll-preloader').remove();
+                return;
+            }
+
+            // 添加新条目
+            addItems(itemsPerLoad, lastIndex);
+            // 更新最后加载的序号
+            lastIndex = $('.list-container li').length;
+            //容器发生改变,如果是js滚动，需要刷新滚动
+            $.refreshScroller();
+        }, 1000);
+    });
+
+    $.init();
+</script>
+
+</html>
