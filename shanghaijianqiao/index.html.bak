@@ -1,0 +1,428 @@
+<!docType html>
+<html>
+	<head>
+		<title>上海建桥学院</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="index.css" />
+	</head>
+	<body>
+		<header>
+			<div id="header">
+				<ul class="h_left">
+					<li><a href="#" style="border-left:0;">在校学生</a></li>
+					<li><a href="#">教职员工</a></li>
+					<li><a href="#">校友</a></li>
+					<li><a href="#">未来学生</a></li>
+					<li><a href="#" style="border-right:0;">未来教职工</a></li>
+				</ul>
+				<div class="h_right">
+					<ul class="edition_box">
+						<li><a href="#">繁体中文</a></li>
+						<li><a href="#">怀念旧版</a></li>
+						<li><a href="#">English</a></li>
+					</ul>
+					<input type="text" placeholder="请输入关键字" />
+					<button></button>
+				</div>
+			</div>
+		</header>
+		<div id="motto">
+			<a href="index.html"></a>			
+		</div>
+		<nav>
+			<ul id="nav">
+				<li style="margin-left:5px;">
+					<a href="index.html">建桥概览</a>
+					<div class="n_list">
+						<img src="image/1.png" />
+					</div>
+				</li>
+				<li>
+					<a href="index.html">机构设置</a>
+					<div class="n_list">
+						<img src="image/2.png" />
+					</div>
+				</li>
+				<li>
+					<a href="index.html">人才培养</a>
+					<div class="n_list">
+						<img src="image/3.png" />
+					</div>
+				</li>
+				<li>
+					<a href="index.html">学术科研</a>
+					<div class="n_list">
+						<img src="image/4.png" />
+					</div>
+				</li>
+				<li>
+					<a href="index.html">校园文化</a>
+					<div class="n_list">
+						<img src="image/5.png" />
+					</div>
+				</li>
+				<li>
+					<a href="index.html">合作交流</a>
+					<div class="n_list">
+						<img src="image/6.png" />
+					</div>
+				</li>
+				<li>
+					<a href="index.html">招生就业</a>
+					<div class="n_list">
+						<img src="image/7.png" />
+					</div>
+				</li>
+				<li>
+					<a href="index.html">校友会</a>
+				</li>
+				<li>
+					<a href="index.html">荣誉榜</a>
+				</li>
+				<li>
+					<a href="index.html">公开事项</a>
+					<div class="n_list">
+						<img src="image/10.png" />
+					</div>
+				</li>	
+			</ul>
+		</div>
+		<div id="banner">
+			<img src="image/banner.png" />
+		</div>
+		<div id="section">
+			<div class="section">
+				<div class="s_part1">
+					<div class="s_part11">
+						<div class="s_title">
+							<a href="#">图片</a>
+							<a href="#">视频</a>
+							<a href="#">名师</a>
+						</div>
+						<img src="image/s_1.png" />
+					</div>
+					<div class="s_part12">
+						<div class="s_title">
+							<a href="#">讲座报告</a>
+							<a href="#">校园活动</a>
+							<a href="#">学校日历</a>
+						</div>
+						<div class="s_part121">
+							<div class="date_div">
+								<p class="sty_1">2016</p>
+								<p class="sty_2">10-20</p>
+							</div>
+							<div class="con_div">
+								<h6>
+									<a href="#">熊伟(美国GLG物流专家)</a>
+								</h6>
+								<p class="con_p">
+									<a href="#">新政下我国跨境电商发展现状</a>
+								</p>
+								<p class="addr_p">
+									<a href="#">大礼堂</a>
+								</p>
+							</div>
+						</div>
+						<div class="s_part122">
+							<div class="date_div">
+								<p class="sty_1">2016</p>
+								<p class="sty_2">10-20</p>
+							</div>
+							<div class="con_div">
+								<h6>
+									<a href="#">陈剑峰(国际问题研究专家)</a>
+								</h6>
+								<p class="con_p">
+									<a href="#">中国南海问题解读</a>
+								</p>
+								<p class="addr_p">
+									<a href="#">大礼堂</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="s_part2">
+					<div class="s_part21">
+						<div class="s_title">
+							<a href="#">快讯</a>
+							<a href="#">院部状态</a>
+							<a href="#">媒体关注</a>
+							<span class="more">&gt;&gt;建桥新闻网</span>						
+						</div>
+						<div class="s_part211">
+							<img src="image/d_1.png" />
+							<p class="sty_title">
+								<a href="#">周宇华处长获"上海高校后勤标兵"奖</a>
+							</p>
+							<p class="sty_con">
+								<a href="#">近日,我校后勤保卫处处长周宇华获得了2016年第三届上海高校后勤标兵(绿叶奖)</a>
+							</p>
+						</div>
+						<div class="s_part212">
+							<img src="image/d_2.png" />
+							<p class="sty_title">
+								<a href="#">我校举行重阳节老同志返校活动</a>
+							</p>
+							<p class="sty_con">
+								<a href="#">10月9日,我校重阳节老同志返校活动在校举行。校长潘迎捷介绍了学校改革与发展状况,校党委书记江彦桥主持...</a>
+							</p>
+						</div>
+					</div>
+					<div class="s_part22">
+						<div class="s_title">
+							<a href="#">通知公告</a>
+							<a href="#">学生通知</a>
+							<a href="#">专栏</a>
+							<a href="#">互动交流</a>
+						</div>
+						<ul>
+							<li>
+								<a href="#">关于进一步做好学校信息公开工作的通知</a>
+								<time>10-16</time>
+							</li>
+							<li>
+								<a href="#">关于规范校内停车秩序的通告</a>
+								<time>10-15</time>
+							</li>
+							<li>
+								<a href="#">关于印发《上海建桥学院关于中外合作交流班若干事宜的管理办...》</a>
+								<time>10-14</time>
+							</li>
+							<li>
+								<a href="#">关于公开推荐商学院党总支副书记的通知</a>
+								<time>10-12</time>
+							</li>
+							<li>
+								<a href="#">关于印发《上海建桥学院2016年秋学期党委工作要点补充》的通...</a>
+								<time>10-11</time>
+							</li>
+						</ul>
+						<marquee>
+							<a href="#" style="font-size:12px;">(全文)</a>
+							<a href="#" style="font-weight:bold;">2016年上海建桥学院新生报到手册</a>
+							<a href="#">《关于加强和改进新形势下高校思想政治工作的意见》印发</a>
+							<a href="#">2015-2016学年本科教学质量报告</a>
+							<a href="#">上海建桥学院2017年工作要点</a>
+						</marquee>
+					</div>
+					
+				</div>
+				<div class="s_part3">
+					<div class="s_part31">
+						<div class="div_bg">
+							<img src="image/15.png" />
+							<img src="image/6.jpg" />
+							<img src="image/7.jpg" />
+							<img src="image/8.jpg" style="margin-top:6px;" />
+							
+						</div>
+					</div>
+					<div class="s_part32">
+						<div class="s_title">
+							<a href="#">信息门户</a>
+							<a href="#">建桥邮箱</a>
+						</div>
+						<form>
+							<div class="xx">
+								<input type="text" />
+								<input type="text" />
+							</div>
+							<div class="bp">
+								<button>登录</button>
+								<p class="t_pw"><a href="#">忘记密码?</a></p>
+							</div>
+							
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="footernav">
+			<div class="fn_top">
+				<div class="xbt">
+					<img src="image/xbt.gif" />	
+				</div>
+				
+			</div>
+			<div class="fn_bottom">
+				<ul class="fb_ul">
+					<li class="fb_nav nav_1">
+						<a href="#">友情链接</a>
+						<div class="list_box">
+							<ul>
+								<li>
+									<a href="#">上海社会建设</a> 
+								</li>
+								<li>
+									<a href="#">上海·浦东</a> 
+								</li>
+								<li>
+									<a href="#">上海·临港</a> 
+								</li>
+								<li>
+									<a href="#">上海社会团体管理局</a> 
+								</li>
+								<li>
+									<a href="#">上海教育文明在线</a> 
+								</li>
+								<li>
+									<a href="#">建桥好好幼儿园</a> 
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="fb_nav nav_2">
+						<a href="#">合作院校</a>
+						<div class="list_box">
+							<ul>
+								<li>
+									<a href="#">英国切斯特大学 University Of Chester,UK</a>
+								</li>
+								<li>
+									<a href="#">我恩航空科技大学 Vaughn College of Aeronautics and Technology</a>
+								</li>
+								<li>
+									<a href="#">德国EBS欧洲商学院 EBS Universitat</a>
+								</li>
+								<li>
+									<a href="#">韩国忠南大学 Chungnam National University</a>
+								</li>
+								<li>
+									<a href="#">韩国培材大学 Pai Chai University</a>
+								</li>
+								<li>
+									<a href="#">南台科技大学 Southern Taiwan University of Technology</a>
+								</li>
+								<li style="clear:both;">
+									<a href="#" style="float:right;padding-right:10px;">更多&gt;&gt;</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="fb_nav nav_3">
+						<a href="#">产学合作单位</a>
+						<div class="list_box">
+							<ul>
+								<li>
+									<a href="#">中兴通讯股份有限公司</a>
+								</li>
+								<li>
+									<a href="#">东方网股份有限公司</a>
+								</li>
+								<li>
+									<a href="#">均瑶集团</a>
+								</li>
+								<li>
+									<a href="#">上海临港经济发展（集团）有限公司</a>
+								</li>
+								<li>
+									<a href="#">康桥企业协会</a>
+								</li>
+								<li>
+									<a href="#">宜特（上海）检测技术有限公司</a>
+								</li>
+								<li style="clear:both;">
+									<a href="#" style="float:right;">更多&gt;&gt;</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="fb_nav nav_4">
+						<a href="#">相关链接</a>
+						<div class="list_box">
+							<ul>
+								<li>
+									<a href="#">中国民办教育协会</a>
+								</li>
+								<li>
+									<a href="#">中国民办教育研究院</a>
+								</li>
+								<li>
+									<a href="#">上海市民办教育协会</a>
+								</li>
+								<li>
+									<a href="#">上海教科院民办教育研究所</a>
+								</li>
+								<li>
+									<a href="#">上海市民办教育发展基金会</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="fb_nav nav_5">
+						<a href="#">实用链接</a>
+						<div class="list_box">
+							<ul>
+								<li>
+									<a href="#">OA办公自动化系统</a>
+								</li>
+								<li>
+									<a href="#">公务员考试网</a>
+								</li>
+								<li>
+									<a href="#">中国研究生招生信息网</a>
+								</li>
+								<li>
+									<a href="#">课程中心</a>
+								</li>
+								<li>
+									<a href="#">图书文献</a>
+								</li>
+								<li>
+									<a href="#">上海招考热线</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<footer>
+			<div id="footer">
+				<ul>
+					<li>
+						<a href="#">教育部</a>
+					</li>
+					<li>
+						<a href="#">上海教育委员会</a>
+					</li>
+					<li>
+						<a href="#">上海建桥(集团)有限公司</a>
+					</li>
+					<li>
+						<a href="#">西南片高校联合办学</a>
+					</li>
+					<li>
+						<a href="#">应用技术大学（学院）联盟</a>
+					</li>
+					<li>
+						<a href="#" style="border-right:0;">非营利性民办高校联盟</a>
+					</li>
+				</ul>
+				<div class="footer_bottom">
+					<div class="footer_left">
+						<a href="#" class="sjqu"></a>
+						<div class="school_xinxi">					
+							<p style="margin-top:30px;">学校地址：上海市浦东新区沪城环路1111号 邮编：201306</p>
+							<p>电话：021-58137788（校办）；021-58137880（招生办公室）沪ICP备05052066号</p>
+						</div>
+					</div>
+					<div class="footer_right">
+						<a href="#" class="w">
+							<img src="image/weixin_b.png" />
+						</a>
+						<a href="#" class="x">
+							<img src="image/xinlang_b.png" />
+						</a>
+						<a href="#" class="y"></a>
+					</div>
+				</div>
+				
+				
+			</div>
+		</footer>
+		
+	</body>
+</html>

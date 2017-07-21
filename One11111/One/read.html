@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>阅读·「ONE · 一个」</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="http://image.wufazhuce.com/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="stylesheet" href="./sui/sm.min.css">
+    <link rel="stylesheet" href="./sui/extend.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        body {
+            min-width: 320px;
+            max-width: 768px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        
+        #onenav {
+            background-color: #fff;
+            border: none;
+            box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.25);
+        }
+        
+        .navbtn {
+            border: 1px solid #75787B;
+            color: #75787B;
+        }
+        
+        #panel-js-demo {
+            width: 50%;
+            background: #fff;
+            box-shadow: 2px 0px 8px 0px rgba(50, 50, 50, 0.25);
+        }
+        
+        .liebiaonav ul li {
+            text-align: center;
+            line-height: 50px;
+        }
+        
+        .liebiaonav ul li {
+            color: #75787B;
+        }
+        
+        .liebiaonav ul li:hover {
+            background: skyblue;
+            color: #fff;
+        }
+        
+        .list-block {
+            margin: 0 0;
+            font-size: .85rem;
+        }
+        
+        .xinxi {
+            width: 100%;
+            text-align: center;
+            color: #666666;
+        }
+        
+        .facebook-card .card-footer {
+            background: #fff;
+            color: #666666;
+        }
+        
+        .mokuai {
+            margin-bottom: 16px;
+            box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.25);
+        }
+        
+        .list-block ul {
+            background: #F6F6F6;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-group">
+        <div class="page page-current">
+            <header id="onenav" class="bar bar-nav">
+                <button class="button pull-left my-btn navbtn" data-panel='#panel-left-demo'>
+                三
+                </button>
+                <button class="button pull-right navbtn " onclick="backgo()">
+                    返回
+                </button>
+                <h1 class="title" style=" color: #75787B;">One丶Piece</h1>
+            </header>
+            <div class="content infinite-scroll infinite-scroll-bottom" data-distance="100">
+                <div class="list-block">
+                    <ul class="list-container content">
+                    </ul>
+                </div>
+                <!-- 加载提示符 -->
+                <div class="infinite-scroll-preloader">
+                    <div class="preloader"></div>
+                </div>
+            </div>
+
+
+
+            <div class="panel-overlay"></div>
+            <div class="panel panel-left panel-cover theme-dark" id='panel-js-demo'>
+                <div class="content-block liebiaonav">
+                    <ul>
+                        <a href="one.html">
+                            <li class="leftnav">简信</li>
+                        </a>
+                        <a href="read.html">
+                            <li class="leftnav" style="color:#fff;background: skyblue;">阅读</li>
+                        </a>
+                        <a href="music.html">
+                            <li class="leftnav">音乐</li>
+                        </a>
+                        <a href="movie.html">
+                            <li class="leftnav">影视</li>
+                        </a>
+                        <a href="about.html">
+                            <li class="leftnav">关于</li>
+                        </a>
+                        <a href="#">
+                            <li class="leftnav">下载APP</li>
+                        </a>
+                        <a href="#" class="close-panel">
+                            <li style="color:#ccc">关闭</li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/template" id="showlist">
+        <a href="reading.html">
+            <li class="card facebook-card mokuai">
+                <div class="card-header no-border">
+                    <div style="font-size:14px;color:#666666;width:100%;text-align: center;">-阅读- <span class="itemid" style="display:none;"> <%= item_id %> </span></div>
+                    <div class="xinxi" style="font-size:20px;color:black">
+                        <%= title %>
+                    </div>
+                    <p style="font-size:14px;color:#666666"></p>
+                </div>
+                <div class="card-content"><img src=" <%= img_url %>" width="100%"></div>
+                <div style="color:#666666;margin-top:10px; padding-left: 10px;">
+                    <%= share_info.title %>
+                </div>
+                <div class="card-footer no-border ">
+                    <p>
+                        <%= forward %>
+                    </p>
+                </div>
+                <div class="xinxi" style="height: 40px;">
+                    <%= post_date %>
+                </div>
+            </li>
+        </a>
+    </script>
+    <script src="./sui/zepto.min.js"></script>
+    <script src="./sui/sm.min.js"></script>
+    <script src="./sui/extend.min.js"></script>
+    <script src="./underscore/underscore.min.js"></script>
+</body>
+<script>
+    function backgo() {
+        window.history.go(-1);
+    }
+    $(document).on("click", ".my-btn", function() {
+        $.openPanel("#panel-js-demo");
+    });
+    $(document).on("click", ".mokuai", function() {
+        var id = $(this).find(".itemid").text();
+        sessionStorage.itemid = id;
+        console.log(id);
+    })
+
+    //加载flag
+    var loading = false;
+    // 最多可加载的条目
+    var lastIndex = 7;
+    var maxItems = 10;
+    // 每次加载添加多少条目
+    addItems();
+
+    function addItems() {
+        //  riqi();
+        var shoplistStr = $("#showlist").html();
+        var plateStr = _.template(shoplistStr);
+        var obj0 = sessionStorage.date;
+        $.ajax({
+            type: "get",
+            url: "http://v3.wufazhuce.com:8000/api/channel/reading/more/0",
+            dataType: "json",
+            success: function(data) {
+                var objer = data.data;
+                $(objer).each(function(index, vl) {
+                    var objStr = plateStr(vl);
+                    var domobj = $(objStr);
+                    $('.infinite-scroll-bottom .list-container').append(domobj);
+                    // 更新最后加载的序号
+                    lastIndex = $('.list-container li').length;
+                })
+            }
+        })
+    }
+
+    // 注册'infinite'事件处理函数
+    $(document).on('infinite', '.infinite-scroll-bottom', function() {
+
+        // 如果正在加载，则退出
+        if (loading) return;
+
+        // 设置flag
+        loading = true;
+
+        // 模拟1s的加载过程
+        setTimeout(function() {
+            // 重置加载flag
+            loading = false;
+
+
+            if (lastIndex >= maxItems) {
+                // 加载完毕，则注销无限加载事件，以防不必要的加载
+                $.detachInfiniteScroll($('.infinite-scroll'));
+                // 删除加载提示符
+                $('.infinite-scroll-preloader').html("客官，今日没有更多了");
+                return;
+            }
+
+            // 添加新条目
+            addItems();
+
+            //容器发生改变,如果是js滚动，需要刷新滚动
+            $.refreshScroller();
+        }, 1000);
+    });
+    $.init()
+</script>
+
+</html>

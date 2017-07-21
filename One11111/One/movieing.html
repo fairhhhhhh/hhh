@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>[ONE · 一个]</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="http://image.wufazhuce.com/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="./sui/sm.min.css">
+    <link rel="stylesheet" href="./sui/extend.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        body {
+            min-width: 320px;
+            max-width: 768px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        
+        #onenav {
+            background-color: #fff;
+            border: none;
+            box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.25);
+        }
+        
+        .navbtn {
+            border: 1px solid #75787B;
+            color: #75787B;
+        }
+        
+        #panel-js-demo {
+            width: 50%;
+            background: #fff;
+            box-shadow: 2px 0px 8px 0px rgba(50, 50, 50, 0.25);
+        }
+        
+        .liebiaonav ul li {
+            text-align: center;
+            line-height: 50px;
+        }
+        
+        .liebiaonav ul li {
+            color: #75787B;
+        }
+        
+        .liebiaonav ul li:hover {
+            background: skyblue;
+            color: #fff;
+        }
+        
+        .list-block {
+            margin: 0 0;
+            font-size: .85rem;
+        }
+        
+        .xinxi {
+            width: 100%;
+            text-align: center;
+            color: #666666;
+        }
+        
+        .facebook-card .card-footer {
+            background: #fff;
+            color: #666666;
+        }
+        
+        .mokuai {
+            margin-bottom: 16px;
+            box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.25);
+        }
+        
+        .list-block ul {
+            background: #F6F6F6;
+        }
+        
+        .readtop {
+            width: 100%;
+            font-size: 1.5rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            font-weight: bolder;
+        }
+        
+        .readcenten {
+            width: 100%;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.8rem;
+        }
+        
+        .content {
+            background: #fff;
+            padding-left: 3%;
+            padding-right: 3%;
+        }
+        
+        .readbott {
+            line-height: 2rem;
+            font-size: 1rem;
+        }
+        
+        .zeren {
+            width: 100%;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.6rem;
+            color: #75787B;
+        }
+        
+        .readpic {
+            width: 100%;
+            box-shadow: 0px 3px 18px 0px rgba(50, 50, 50, 0.25);
+        }
+        
+        .readpic img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-group">
+        <div class="page page-current">
+            <header id="onenav" class="bar bar-nav">
+                <button class="button pull-left my-btn navbtn" data-panel='#panel-left-demo'>
+                三
+                </button>
+                <button class="button pull-right navbtn " onclick="backgo()">
+                    返回
+                </button>
+                <h1 class="title" style=" color: #75787B;">One丶Piece</h1>
+            </header>
+            <div class="panel-overlay"></div>
+            <div class="panel panel-left panel-cover theme-dark" id='panel-js-demo'>
+                <div class="content-block liebiaonav">
+                    <ul>
+                        <a href="one.html">
+                            <li class="leftnav">简信</li>
+                        </a>
+                        <a href="read.html">
+                            <li class="leftnav">阅读</li>
+                        </a>
+                        <a href="music.html">
+                            <li class="leftnav">音乐</li>
+                        </a>
+                        <a href="movie.html">
+                            <li class="leftnav">影视</li>
+                        </a>
+                        <a href="about.html">
+                            <li class="leftnav" style="color:#fff;background: skyblue;">关于</li>
+                        </a>
+                        <a href="#">
+                            <li class="leftnav">下载APP</li>
+                        </a>
+                        <a href="#" class="close-panel">
+                            <li style="color:#ccc">关闭</li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+            <div class="content">
+                <!--内容区-->
+                <div class="readpic readpic-1">
+                    <img src="" alt="">
+                </div>
+                <div class="readtop"></div>
+                <div style=" width:25%;border-bottom: 0.2rem solid black;"></div>
+                <div class="readcenten"></div>
+                <div class="readpe" style="line-height: 1.5rem"></div>
+                <div class="readpic readpic-2" style=" margin-top: 1rem;margin-bottom: 1rem;">
+                    <img src="" alt="">
+                </div>
+                <div class="readbott"></div>
+                <div class="zeren"></div>
+
+
+            </div>
+        </div>
+    </div>
+    <script src="./sui/zepto.min.js"></script>
+    <script src="./sui/sm.min.js"></script>
+    <script src="./sui/extend.min.js"></script>
+</body>
+<script>
+    function backgo() {
+        window.history.go(-1);
+    }
+    $(document).on("click", ".my-btn", function() {
+        $.openPanel("#panel-js-demo");
+    });
+
+    var id = sessionStorage.itemid;
+    $.ajax({
+        type: "get",
+        url: "http://v3.wufazhuce.com:8000/api/movie/detail/" + id,
+        dataType: "json",
+        success: function(data) {
+            var obj = data.data;
+            $(".readpic-1 img").attr("src", obj.detailcover);
+            $(".readtop").html(obj.share_list.qq.title);
+            $(".readcenten").html(obj.title);
+            $(".readpe").html(obj.info)
+            $(".readpic-2 img").attr("src", obj.photo[0]);
+            $(".readbott").html(obj.officialstory);
+            $(".zeren").html(obj.charge_edt);
+        }
+    })
+</script>
+
+
+</html>

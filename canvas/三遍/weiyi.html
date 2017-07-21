@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+</body>
+<script>
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    canvas.width = 600;
+    canvas.height = 600;
+    canvas.style.border = "1px solid #ccc";
+
+    ctx.fillStyle = "red";
+    ctx.fillRect(10, 10, 100, 100);
+    ctx.save();
+
+    ctx.restore(); //保存离它最近的颜色
+    ctx.translate(10, 10); //矩形的中心点
+    ctx.scale(2, 2); //能够使矩形的宽高放大两倍
+    ctx.fillRect(10, 10, 100, 100);
+
+    ctx.restore();
+    ctx.translate(50, 50);
+    ctx.fillStyle = "green";
+    ctx.strokeStyle = 'pink';
+    ctx.moveTo(0, 0);
+    ctx.lineTo(400, 0);
+    ctx.moveTo(0, 0);
+    ctx.lineTo(0, 400);
+    ctx.stroke();
+
+    ctx.globalAlpha = 0.3;
+    ctx.restore();
+    ctx.fillRect(50, 50, 40, 40);
+
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    canvas.width = 600;
+    canvas.height = 600;
+    canvas.style.border = "1px solid #ccc";
+
+    ctx.fillStyle = "red";
+    ctx.fillRect(10, 10, 100, 100);
+    ctx.save();
+
+    ctx.restore(); //保存离它最近的颜色
+    ctx.translate(10, 10); //矩形的中心点
+    ctx.scale(2, 2); //能够使矩形的宽高放大两倍
+    ctx.fillRect(10, 10, 100, 100);
+
+    ctx.restore();
+    ctx.translate(50, 50);
+    ctx.fillStyle = "green";
+    ctx.strokeStyle = 'pink';
+    ctx.moveTo(0, 0);
+    ctx.lineTo(400, 0);
+    ctx.moveTo(0, 0);
+    ctx.lineTo(0, 400);
+    ctx.stroke();
+
+    ctx.globalAlpha = 0.3;
+    ctx.restore();
+    ctx.fillRect(50, 50, 40, 40);
+
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    canvas.width = 600;
+    canvas.height = 600;
+    canvas.style.border = "1px solid #ccc";
+
+    ctx.fillStyle = "red";
+    ctx.fillRect(10, 10, 100, 100);
+    ctx.save();
+
+    ctx.restore(); //保存离它最近的颜色
+    ctx.translate(10, 10); //矩形的中心点
+    ctx.scale(2, 2); //能够使矩形的宽高放大两倍
+    ctx.fillRect(10, 10, 100, 100);
+
+    ctx.restore();
+    ctx.translate(50, 50);
+    ctx.fillStyle = "green";
+    ctx.strokeStyle = 'pink';
+    ctx.moveTo(0, 0);
+    ctx.lineTo(400, 0);
+    ctx.moveTo(0, 0);
+    ctx.lineTo(0, 400);
+    ctx.stroke();
+
+    ctx.globalAlpha = 0.3;
+    ctx.restore();
+    ctx.fillRect(50, 50, 40, 40);
+</script>
+
+</html>

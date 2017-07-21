@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>One丶Piece</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="favicon.ico/vv.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="https://g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <link rel="stylesheet" href="https://g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
+
+    <link rel="stylesheet" href="css/modie.css">
+    <link rel="stylesheet" href="css/more.css">
+
+</head>
+
+<body>
+
+    <div class="page page-current">
+        <!-- 你的html代码 -->
+        <header class="bar bar-nav">
+            <span class="icon icon-menu pull-left open-panel"></span>
+            <h1 class="title">One丶Piece</h1>
+            <span class="icon icon-search pull-right yyy-Bigglass"></span>
+        </header>
+        <div class="bar bar-header-secondary" id="yyy-search">
+            <div class="searchbar">
+                <div class="search-input">
+                    <label class="icon icon-search" for="search"></label>
+                    <input type="search" id='search' placeholder='输入关键字...' />
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-left panel-cover" id="panel-peri">
+            <div class="content-block content-list">
+                <p><a href="">图片</a></p>
+                <p><a href="">阅读</a></p>
+                <p><a href="">影视</a></p>
+                <p><a href="">音乐</a></p>
+                <p><a href="">下载App</a></p>
+                <p><a href="">关于</a></p>
+            </div>
+
+        </div>
+        <div class="content" role="main" id="content">
+            <div class="content-list item-list" id="content-aaa">
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    </div>
+
+
+
+    <script type='text/javascript' src='https://g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+    <script src="js/touch.js"></script>
+    <script type='text/javascript' src='https://g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='https://g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+
+</body>
+<script>
+    var searchHand = $(".yyy-Bigglass");
+    console.log(searchHand);
+
+    $(".yyy-Bigglass").tap(function(ev) {
+        ev.stopPropagation(); // 取消事件冒泡
+        $("#yyy-search").show();
+    })
+    $("#yyy-search").tap(function(ev) {
+        ev.stopPropagation();
+        $("#search").focus(); //焦点
+
+    })
+    $(document).tap(function() {
+        $("#yyy-search").hide();
+    })
+    window.onresize = init;
+    init();
+
+    function init() {
+        var windowHeight = document.documentElement.clientHeight;
+        var windowWidth = document.documentElement.clientWidth;
+        console.log(windowHeight)
+        console.log(windowWidth)
+        $(".home-img").css({
+            "width": windowWidth,
+            "height": windowHeight
+        })
+        $(".sentence-bg").css({
+            "width": windowWidth,
+            "height": windowHeight
+        })
+        $(".sentence").css({
+            "width": windowWidth,
+            "height": windowHeight
+        })
+    }
+    var html = "";
+    $.ajax({
+        type: "get",
+        url: "http://v3.wufazhuce.com:8000/api/onelist/idlist",
+        success: function(data) {
+            var dadaData = data.data;
+            // console.log(dadaData);
+            $.each(dadaData, function(i, item) {
+                // console.log(i);
+                console.log(item);
+                $.ajax({
+                    type: "get",
+                    url: "http://v3.wufazhuce.com:8000/api/onelist/ " + item + "/0?",
+                    success: function(data) {
+                        var data = data.data //!!!对象
+                            // console.log(data);
+                            // console.log(data.content_list)
+                        var datanew = data.content_list[0];
+                        // console.log(data.content_list[0])
+                        var timenew = new Date(datanew.post_date);
+                        var years = timenew.getFullYear();
+                        var mouth = timenew.getMonth() + 1;
+                        var datss = timenew.getDate();
+                        var riqi = years + "/" + mouth + "/" + datss;
+                        console.log(years + "/" + mouth + "/" + datss)
+                        html = `<div class="item-text item-picture link-div" data-id="${datanew.item_id}">
+                    <p class="item-picture-date">${riqi}</p>
+                    <p class="issue-no">${datanew.volume}</p>
+                    <a class="div-link" href="#"> <img alt="" class="lazy_img item-picture-img" data-src="${datanew.img_url}" src="${datanew.img_url}" style="display: inline;"> </a>
+                    <p class="picture-author">${datanew.title}| Félix Vallotton</p>
+                    <p class="picture-content">${datanew.forward}</p>
+                    <p class="picture-author">${datanew.words_info}</p>
+                </div>    `
+                        $("#content-aaa").append(html)
+                    }
+                })
+            })
+
+        }
+    })
+</script>
+
+</html>

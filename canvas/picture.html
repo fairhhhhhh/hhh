@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="konva.js"></script>
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            overflow: hidden;
+        }
+        
+        #container {
+            background: #000;
+        }
+        
+        #sizing-addon1 {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="input-group input-group-lg">
+        <span class="input-group-addon" id="sizing-addon1">@</span>
+        <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon1">
+    </div>
+    <div id="container">
+
+    </div>
+</body>
+<script>
+    //点击 @ 生成图片，并下载
+    var addon = document.getElementById('sizing-addon1');
+
+    //添加背景图片
+    var width = window.innerWidth;
+    var height = window.innerHeight;
+    var stage = new Konva.Stage({
+        container: 'container',
+        width: width,
+        height: height,
+    });
+
+    var layer = new Konva.Layer();
+    var image = new Image();
+    image.src = '11.jpg';
+
+    function imgLoad(a) {
+        var dayImage = new Konva.Image({
+            x: 0,
+            y: 46,
+            image: image,
+            width: 500,
+            height: 500
+        });
+        var otext = new Konva.Text({
+            x: 110,
+            y: 178,
+            text: a,
+            fontSize: 20,
+            fontFamily: 'Cablibri',
+            fill: '#000'
+        })
+        layer.add(dayImage);
+        layer.add(otext);
+        stage.add(layer);
+        var dataURL = stage.toDataURL('jpg/png');
+        console.log(dataURL);
+
+        addon.onclick = function() {
+            imgLoad();
+            window.open(dataURL);
+        }
+    }
+    imgLoad()
+
+    //按下键盘的ENTER 把input的值传到图片上
+    document.onkeydown = function(e) {
+        var e = e || window.event;
+        if (e.keyCode == 13) {
+            var inp = document.getElementsByClassName('form-control')[0];
+            var inpVal = inp.value;
+            // text(inpVal);
+            imgLoad(inpVal)
+        }
+    }
+</script>
+
+</html>

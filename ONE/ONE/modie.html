@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>One丶Piece</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="favicon.ico/vv.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="https://g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <link rel="stylesheet" href="https://g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
+
+    <link rel="stylesheet" href="css/modie.css">
+
+</head>
+
+<body>
+
+    <div class="page page-current">
+        <!-- 你的html代码 -->
+        <header class="bar bar-nav">
+            <span class="icon icon-menu pull-left open-panel"></span>
+
+            <a href="index.html">
+                <h1 class="title">One丶Piece</h1>
+            </a>
+            <span class="icon icon-search pull-right yyy-Bigglass"></span>
+        </header>
+        <div class="bar bar-header-secondary" id="yyy-search">
+            <div class="searchbar">
+                <div class="search-input">
+                    <label class="icon icon-search" for="search"></label>
+                    <input type="search" id='search' placeholder='输入关键字...' />
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-left panel-cover" id="panel-peri">
+            <div class="content-block content-list">
+                <p><a href="">图片</a></p>
+                <p><a href="">阅读</a></p>
+                <p><a href="">影视</a></p>
+                <p><a href="">音乐</a></p>
+                <p><a href="">下载App</a></p>
+                <p><a href="">关于</a></p>
+            </div>
+
+        </div>
+        <div class="content" role="main" id="content">
+            <div class="home-img">
+            </div>
+            <!--<div class="sentence-bg"></div>-->
+            <div class="sentence">
+                <div class="link-div link-word" id="link-sss">
+
+                </div>
+
+                <a href="#home-text-anchor" class="anchor-link ui-link">
+                    <span class="icon icon-down"></span>
+                </a>
+            </div>
+            <div id="home-text-anchor">
+                <a name="home-text-anchor" id="home-text-anchor" class="ui-link"></a>
+            </div>
+            <div class="home-text">
+                <div class="article">
+                    <p class="text-type">
+                        <a href="http://m.wufazhuce.com/article" class="ui-link">阅 读｜</a>
+                    </p>
+                    <div class="link-div" id="link-article">
+
+                    </div>
+                </div>
+                <div class="question">
+                    <p class="text-type">
+                        <a href="http://m.wufazhuce.com/question" class="ui-link">问 答 |</a>
+                    </p>
+                    <div class="link-div" id="link-rrr">
+
+                    </div>
+                </div>
+            </div>
+            <div class="moreButton">
+                <a href="more.html">更多内容 ></a>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    </div>
+
+
+
+    <script type='text/javascript' src='https://g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+    <script src="js/touch.js"></script>
+    <script type='text/javascript' src='https://g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='https://g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+
+</body>
+<script>
+    var searchHand = $(".yyy-Bigglass");
+    console.log(searchHand);
+
+    $(".yyy-Bigglass").tap(function(ev) {
+        ev.stopPropagation(); // 取消事件冒泡
+        $("#yyy-search").show();
+    })
+    $("#yyy-search").tap(function(ev) {
+        ev.stopPropagation();
+        $("#search").focus(); //焦点
+
+    })
+    $(document).tap(function() {
+        $("#yyy-search").hide();
+    })
+    window.onresize = init;
+    init();
+
+    function init() {
+        var windowHeight = document.documentElement.clientHeight;
+        var windowWidth = document.documentElement.clientWidth;
+        console.log(windowHeight)
+        console.log(windowWidth)
+        $(".home-img").css({
+            "width": windowWidth,
+            "height": windowHeight
+        })
+        $(".sentence-bg").css({
+            "width": windowWidth,
+            "height": windowHeight
+        })
+        $(".sentence").css({
+            "width": windowWidth,
+            "height": windowHeight
+        })
+    }
+    var html = "";
+    var reader = "";
+    var answer = "";
+    $.ajax({
+        type: "get",
+        url: "http://v3.wufazhuce.com:8000/api/onelist/idlist",
+        success: function(data) {
+            var dadaData = data.data;
+            console.log(dadaData);
+            $.ajax({
+                type: "get",
+                url: "http://v3.wufazhuce.com:8000/api/onelist/ " + dadaData[0] + "/0?",
+                success: function(data) {
+                    var data = data.data //!!!对象
+                    console.log(data);
+                    var contentList = data.content_list //!!! 数组 8条数据
+                    console.log(contentList);
+                    var today = contentList[0]; // !!! 数组的第一组数据  Object格式
+                    var todayR = contentList[1];
+                    var todayA = contentList[4];
+                    // console.log(today);
+                    var time = new Date(today.post_date)
+                        // console.log(time)
+                    var day = time.getDate();
+                    // console.log(day)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    $(".home-img").css("background-image", "url(" + today.img_url + ")")
+                    html = `  
+                    <a class="div-link ui-link" href="#"></a>
+                    <p class="day">${day}</p>
+                    <p class="month">${today.volume}&nbsp;</p>
+                    <p class="text-content-short" id="quote">${today.forward}</p>
+                  `
+                    reader = `
+                          <p class="text-title">${todayR.title}</p>   
+                        <p class="text-author">作者／${todayR.author.user_name}</p>
+                        <p class="text-content-short">${todayR.forward}</p>
+                        <p class="text-more">
+                            <a class="div-link ui-link" href="http://m.wufazhuce.com/article/2560">阅读全文</a>
+                        </p>
+                    `
+                    answer = `  <p class="text-title">${todayA.title}</p>
+                        <p class="text-content-short">${todayA.forward}</p>
+                        <p class="text-more">
+                         <a class="div-link ui-link" href="http://m.wufazhuce.com/question/1770">阅读全文</a>
+                        </p>
+
+                    `
+                    $("#link-sss").append(html);
+                    $("#link-article").append(reader);
+                    $("#link-rrr").append(answer);
+
+                }
+            })
+        }
+    })
+</script>
+
+</html>

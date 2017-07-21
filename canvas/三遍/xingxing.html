@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.rawgit.com/konvajs/konva/1.6.3/konva.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+
+    <script>
+        var stage = new Konva.Stage({
+            container: 'container',
+            width: 300,
+            height: 300
+        });
+        var layer = new Konva.Layer();
+        var star = new Konva.Star({
+            x: stage.getWidth() / 2,
+            y: stage.getHeight() / 2,
+            numPoints: 5, // 星星的角数
+            innerRadius: 50, // 内聚，越大越胖
+            outerRadius: 30, // 越大越瘦
+            fill: 'yellow', // 填充五角星肚子
+            stroke: 'red', //笔触，五角星的边
+            strokeWidth: 4 // 五角星的边宽细
+        });
+        layer.add(star);
+        stage.add(layer);
+
+         var stage = new Konva.Stage({
+            container: 'container',
+            width: 300,
+            height: 300
+        });
+        var layer = new Konva.Layer();
+        var star = new Konva.Star({
+            x: stage.getWidth() / 2,
+            y: stage.getHeight() / 2,
+            numPoints: 5, // 星星的角数
+            innerRadius: 50, // 内聚，越大越胖
+            outerRadius: 30, // 越大越瘦
+            fill: 'yellow', // 填充五角星肚子
+            stroke: 'red', //笔触，五角星的边
+            strokeWidth: 4 // 五角星的边宽细
+        });
+        layer.add(star);
+        stage.add(layer);
+
+         var stage = new Konva.Stage({
+            container: 'container',
+            width: 300,
+            height: 300
+        });
+        var layer = new Konva.Layer();
+        var star = new Konva.Star({
+            x: stage.getWidth() / 2,
+            y: stage.getHeight() / 2,
+            numPoints: 5, // 星星的角数
+            innerRadius: 50, // 内聚，越大越胖
+            outerRadius: 30, // 越大越瘦
+            fill: 'yellow', // 填充五角星肚子
+            stroke: 'red', //笔触，五角星的边
+            strokeWidth: 4 // 五角星的边宽细
+        });
+        layer.add(star);
+        stage.add(layer);
+    </script>
+</body>
+
+</html>

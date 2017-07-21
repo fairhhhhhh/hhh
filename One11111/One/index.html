@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css">
+    <title>「ONE · 一个」</title>
+    <style>
+        body {
+            min-width: 320px;
+            max-width: 768px;
+            overflow-x: hidden;
+            margin: 0 auto;
+        }
+        
+        .btn-defailt {
+            background: #fff;
+            color: #75787B;
+            border: 1px solid #75787B;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            margin-left: 8px;
+            margin-top: 8px;
+            margin-right: 8px;
+        }
+        
+        .navbar-fixed-top {
+            min-width: 320px;
+            max-width: 768px;
+            margin: 0 auto;
+            box-shadow: 0 2px 8px rgba(50, 50, 50, 0.25);
+            background: #fff;
+        }
+        
+        #navtext {
+            width: 100%;
+            display: block;
+            position: absolute;
+            margin: 0 auto;
+            top: 10px;
+            font-size: 1.7rem;
+            text-align: center;
+            color: #75787B;
+        }
+        
+        .meitxt {
+            min-width: 320px;
+            max-width: 768px;
+            position: absolute;
+            z-index: 2;
+            width: 100%;
+            height: 35%;
+            top: 70%;
+            overflow: hidden;
+            box-sizing: border-box;
+            padding-left: 8%;
+            padding-right: 8%;
+            color: #fff;
+            overflow: hidden;
+        }
+        
+        .duanluo {
+            width: 100%;
+            height: 50px;
+            line-height: 2rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+        
+        .pic1 {
+            margin-top: 4rem;
+            width: 100%;
+        }
+        
+        .pic2 {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .lookmore {
+            margin: 0;
+            margin-bottom: 30px;
+            outline: none;
+        }
+        
+        .xiala {
+            width: 10%;
+            height: 4rem;
+            text-align: center;
+            position: relative;
+            margin: 0 auto;
+            left: 45%;
+            top: -6rem;
+            line-height: 4rem;
+            font-size: 40px;
+            animation: hua 0.5s linear 0s infinite alternate forwards;
+            z-index: 10;
+            color: #75787B;
+        }
+        
+        @-webkit-keyframes hua {
+            0% {
+                top: -6rem;
+            }
+            100% {
+                top: -5rem;
+            }
+        }
+    </style>
+</head>
+<div class="container-fluid">
+    <div class=" nav navbar-fixed-top">
+        <input class="btn btn-defailt btn-sm" type="button" name="" value="ONE">
+        <span id="navtext">One丶Piece</span>
+        <input class="btn btn-defailt pull-right btn-sm" type="button" name="" value="一个">
+    </div>
+    <div class="row">
+        <img class="img-responsive center-block pic1" src="img/onepic.png" alt="One">
+        <div class="meitxt">
+            <p class="shijian h1"></p>
+            <p class="banben h3"></p>
+            <div class="duanluo h4"></div>
+        </div>
+        <div class="xiala glyphicon glyphicon-chevron-down"></div>
+        <img src="img/indexpic.png" alt="one" class="img-responsive center-block pic2">
+        <img src="img/indexpic2.png" alt="one" class="img-responsive center-block pic2">
+        <div style="width:50%;margin:0 auto;">
+            <a href="one.html"><input class="btn btn-defailt btn-lg lookmore btn-block" type="button" value="查看更多>"></a>
+        </div>
+    </div>
+</div>
+
+<body>
+
+</body>
+<script src="./dist/jquery.js"></script>
+<script src="dist/js/bootstrap.min.js"></script>
+<script>
+    $(".pic1").height($(window).height());
+    $(window).scroll(function() {
+        var foot = $(window).scrollTop();
+        $(".xiala").click(function() {
+            $(window).scrollTop($(window).height() + foot);
+        })
+    })
+    var obj0;
+
+    function riqi() {
+        $.ajax({
+            type: "get",
+            url: "http://v3.wufazhuce.com:8000/api/onelist/idlist",
+            dataType: "json",
+            success: function(data) {
+                var obj = data.data;
+                obj0 = obj[0];
+                addItems();
+            }
+        })
+    };
+    riqi();
+
+    function addItems() {
+        $.ajax({
+            type: "get",
+            url: "http://v3.wufazhuce.com:8000/api/onelist/" + obj0 + "/0",
+            dataType: "json",
+            success: function(data) {
+                var objar = data.data;
+                var objer = data.data.content_list;
+                $(".shijian").text(objar.weather.date);
+                $(".banben").text(objer[0].volume);
+                $(".duanluo").text(objer[0].forward);
+            }
+        })
+    }
+</script>
+
+</html>
